@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carte avis Google NFC · Allauch, Aubagne, Plan-de-Cuques, Château-Gombert</title>
+<meta name="description" content="Carte NFC pour recevoir plus d'avis Google. 50 €, installation incluse, remise en main propre à Allauch, Aubagne, Plan-de-Cuques et Château-Gombert.">
+<meta property="og:title" content="Plus d'avis Google, en un seul geste">
+<meta property="og:description" content="La carte NFC qui envoie vos clients sur votre page d'avis. 50 €, installée pour vous.">
+<meta name="theme-color" content="#fbfbfd">
+<style>
+:root{--bg:#fbfbfd;--soft:#f5f5f7;--ink:#1d1d1f;--mute:#6e6e73;--line:#d2d2d7;--blue:#0071e3;--blue2:#0a5fc4;--card:#fff;--r:22px}
+@media(prefers-color-scheme:dark){:root{--bg:#000;--soft:#161617;--ink:#f5f5f7;--mute:#a1a1a6;--line:#3a3a3c;--card:#1c1c1e;--blue:#2997ff;--blue2:#4aa8ff}}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter","Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 78%,transparent);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid color-mix(in srgb,var(--line) 60%,transparent)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:52px}
+nav b{font-weight:600;letter-spacing:-.01em}
+nav .links{display:flex;gap:24px;align-items:center;font-size:14px}
+nav .links a{color:var(--mute)}nav .links a:hover{color:var(--ink);text-decoration:none}
+.btn{display:inline-block;background:var(--blue);color:#fff!important;border:0;border-radius:980px;padding:12px 24px;font:500 17px/1.2 inherit;font-family:inherit;cursor:pointer;transition:background .2s,transform .2s}
+.btn:hover{background:var(--blue2);text-decoration:none}.btn:active{transform:scale(.97)}
+.btn.sm{padding:6px 14px;font-size:13px}
+.btn.ghost{background:transparent;color:var(--blue)!important;padding:12px 8px}
+.btn[disabled]{opacity:.6;cursor:wait}
+h1{font-size:clamp(40px,7.4vw,80px);line-height:1.04;letter-spacing:-.035em;font-weight:700}
+h2{font-size:clamp(30px,4.6vw,48px);line-height:1.08;letter-spacing:-.028em;font-weight:700}
+.lead{font-size:clamp(19px,2.2vw,24px);color:var(--mute);line-height:1.35;letter-spacing:-.01em}
+section{padding:96px 0}
+.hero{text-align:center;padding:72px 0 40px}
+.hero .lead{max-width:640px;margin:22px auto 30px}
+.cta{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;align-items:center}
+.stage{perspective:1100px;margin:56px auto 0;display:flex;justify-content:center;padding-bottom:24px}
+.card3d{width:min(340px,80vw);aspect-ratio:1;border-radius:34px;overflow:hidden;background:#fff;box-shadow:0 40px 80px -20px rgba(0,60,160,.35),0 8px 24px rgba(0,0,0,.12);transform:rotateX(var(--rx,6deg)) rotateY(var(--ry,-10deg));transition:transform .25s ease-out;animation:rise .9s cubic-bezier(.2,.8,.2,1) both;color:#111;display:flex;flex-direction:column}
+@keyframes rise{from{opacity:0;transform:translateY(40px) rotateX(14deg)}}
+.card3d .top{flex:0 0 52%;background:linear-gradient(160deg,#2a6df4,#1747c9);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#fff;font-weight:600;font-size:clamp(13px,3.6vw,16px);text-align:center;padding:0 16px;clip-path:ellipse(95% 100% at 50% 0)}
+.gdot{width:64px;height:64px;border-radius:50%;background:#fff;display:grid;place-items:center}
+.gdot svg{width:38px;height:38px}
+.card3d .bot{flex:1;display:flex;align-items:center;justify-content:space-around;padding:0 18px 8px}
+.card3d .bot p{font-size:12px;font-weight:700;line-height:1.25;text-align:center;max-width:110px}
+.card3d .bot svg.nfc{width:64px;height:64px;color:#111}
+.qr{width:68px;height:68px}
+.sub{font-size:13px;color:var(--mute);margin-top:18px}
+.band{background:var(--soft)}
+.head{text-align:center;max-width:700px;margin:0 auto 56px}
+.head .lead{margin-top:14px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.step{background:var(--card);border-radius:var(--r);padding:32px 28px}
+.step i{font-style:normal;font-weight:700;font-size:15px;color:var(--blue);display:block;margin-bottom:14px}
+.step h3{font-size:22px;letter-spacing:-.02em;margin-bottom:8px}
+.step p{color:var(--mute);font-size:16px}
+.offer{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
+.price{font-size:clamp(64px,10vw,104px);font-weight:700;letter-spacing:-.045em;line-height:1}
+.price small{font-size:.32em;font-weight:600;letter-spacing:-.01em;color:var(--mute);margin-left:6px}
+.offer ul{list-style:none;padding:0;margin:26px 0 30px;display:grid;gap:12px;font-size:18px}
+.offer li{display:flex;gap:12px;align-items:flex-start}
+.offer li:before{content:"";flex:0 0 22px;height:22px;margin-top:2px;border-radius:50%;background:var(--blue) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/70% no-repeat}
+.range{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.item{background:var(--card);border-radius:var(--r);padding:28px 20px 24px;text-align:center}
+.item .art{height:130px;display:grid;place-items:center;margin-bottom:18px}
+.mini{width:104px;height:104px;border-radius:22px;display:grid;place-items:center;box-shadow:0 14px 28px -10px rgba(0,0,0,.3)}
+.mini svg{width:56px;height:56px}
+.key{position:relative;display:grid;place-items:center}
+.key:before{content:"";position:absolute;top:-26px;width:34px;height:34px;border:4px solid #a1a1a6;border-radius:50%}
+.key .mini{width:78px;height:78px;border-radius:18px}.key .mini svg{width:42px;height:42px}
+.keys{display:flex;gap:10px;padding-top:26px}
+.item h3{font-size:18px;letter-spacing:-.015em}
+.item p{color:var(--mute);font-size:14px;margin-top:4px}
+.zones{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.zones span{background:var(--card);padding:10px 20px;border-radius:980px;font-size:17px;font-weight:500}
+.faq{max-width:700px;margin:0 auto}
+details{border-bottom:1px solid var(--line);padding:20px 0}
+summary{cursor:pointer;font-size:19px;font-weight:600;letter-spacing:-.01em;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";font-size:26px;line-height:1;color:var(--mute);transition:transform .25s}
+details[open] summary:after{transform:rotate(45deg)}
+details p{color:var(--mute);margin-top:10px;font-size:17px}
+form{max-width:640px;margin:0 auto;background:var(--card);border-radius:28px;padding:40px;display:grid;gap:18px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:grid;gap:6px;font-size:14px;font-weight:600}
+label span{font-weight:400;color:var(--mute)}
+input,select,textarea{font:inherit;font-size:17px;color:var(--ink);background:var(--soft);border:1px solid transparent;border-radius:12px;padding:13px 14px;width:100%;transition:border-color .2s,background .2s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--blue);background:var(--card)}
+textarea{resize:vertical;min-height:90px}
+fieldset{border:0;padding:0;display:grid;gap:10px}
+legend{font-size:14px;font-weight:600;margin-bottom:10px}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pills label{display:block;font-weight:500}
+.pills input{position:absolute;opacity:0;width:1px;height:1px}
+.pills b{display:block;padding:10px 16px;border-radius:980px;background:var(--soft);font-weight:500;font-size:15px;cursor:pointer;border:1px solid transparent;transition:.2s}
+.pills input:checked+b{background:var(--blue);color:#fff}
+.pills input:focus-visible+b{outline:3px solid var(--blue);outline-offset:2px}
+.hp{position:absolute;left:-9999px}
+.note{font-size:12px;color:var(--mute);line-height:1.4}
+.msg{border-radius:12px;padding:14px 16px;font-size:15px;display:none}
+.msg.err{display:block;background:#ff3b3014;color:#d70015}
+.done{text-align:center;padding:24px 0;display:none}
+.done .ok{width:64px;height:64px;border-radius:50%;background:#34c759;margin:0 auto 20px;display:grid;place-items:center}
+.done h3{font-size:28px;letter-spacing:-.02em}
+.done p{color:var(--mute);margin:10px 0 24px}
+.contact{text-align:center;margin-top:36px;color:var(--mute)}
+.contact a{font-weight:600}
+footer{border-top:1px solid var(--line);padding:32px 0 48px;font-size:12px;color:var(--mute);line-height:1.6}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
+@media(max-width:820px){.steps,.range{grid-template-columns:1fr 1fr}.offer{grid-template-columns:1fr;gap:32px;text-align:center}.offer li{text-align:left}.offer .cta{justify-content:center}section{padding:72px 0}}
+@media(max-width:560px){.steps,.range,.row{grid-template-columns:1fr}form{padding:28px 20px}nav .links a.h{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<symbol id="g" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></symbol>
+<symbol id="ig" viewBox="0 0 48 48" fill="none" stroke="#fff" stroke-width="3.4"><rect x="8" y="8" width="32" height="32" rx="10"/><circle cx="24" cy="24" r="7.5"/><circle cx="33" cy="15" r="1.4" fill="#fff" stroke="none"/></symbol>
+<symbol id="fb" viewBox="0 0 48 48"><path fill="#fff" d="M26.5 44V27h5.6l.9-6.6h-6.5v-4.2c0-1.9.6-3.2 3.3-3.2H33V7.1C32.400 7 30.500 6.900 28.300 6.900c-5 0-8.300 3-8.300 8.600v4.900h-5.600V27H20v17z"/></symbol>
+<symbol id="wa" viewBox="0 0 48 48" fill="none" stroke="#fff" stroke-width="3.4" stroke-linejoin="round"><path d="M24 6.500a17.500 17.500 0 0 0-15 26.400L6.500 41.500l8.800-2.300A17.500 17.500 0 1 0 24 6.500z"/><path d="M18 17c-1 1.200-1 3 .5 5.500s3.800 4.600 6.500 5.500c2 .7 3.300-.3 3.800-1.500l-3-1.700-1.300 1c-1.500-.6-3-2.200-3.800-3.700l1-1.300-1.700-3z" fill="#fff" stroke-width="1"/></symbol>
+<symbol id="nfc" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"><path d="M26 22c4 6 4 14 0 20M34 17c6.500 9 6.500 21 0 30M42 12c8.500 12 8.500 28 0 40"/></symbol>
+</defs>
+</svg>
+
+<nav><div class="wrap"><b>TapAvis</b>
+<div class="links"><a class="h" href="#offre">Offre</a><a class="h" href="#gamme">Gamme</a><a class="h" href="#faq">Questions</a><a class="btn sm" href="#contact">Ça m'intéresse</a></div></div></nav>
+
+<main>
+<header class="hero wrap">
+<h1>Plus d'avis Google.<br>Un seul geste.</h1>
+<p class="lead">Vos clients approchent leur téléphone de la carte et votre page d'avis s'ouvre. Sans application, sans chercher.</p>
+<div class="cta"><a class="btn" href="#contact">Ça m'intéresse</a><a class="btn ghost" href="#offre">Voir l'offre</a></div>
+<div class="stage" id="stage">
+<div class="card3d" id="card">
+<div class="top"><div class="gdot"><svg><use href="#g"/></svg></div>Laissez-nous votre avis<br>sur Google</div>
+<div class="bot"><div style="display:grid;place-items:center;gap:6px"><svg class="nfc"><use href="#nfc"/></svg><p>Approchez votre téléphone</p></div><div style="display:grid;place-items:center;gap:6px"><svg class="qr" id="qr" viewBox="0 0 21 21" shape-rendering="crispEdges"></svg><p>ou scannez</p></div></div>
+</div></div>
+<p class="sub">Le QR code reste là au cas où le téléphone n'a pas le NFC.</p>
+</header>
+
+<section class="band"><div class="wrap">
+<div class="head rv"><h2>Simple pour vos clients.</h2><p class="lead">Dix secondes, du comptoir à l'avis publié.</p></div>
+<div class="steps">
+<div class="step rv"><i>1</i><h3>Ils approchent</h3><p>Le client pose son téléphone contre la carte, à la caisse ou sur le comptoir.</p></div>
+<div class="step rv"><i>2</i><h3>La page s'ouvre</h3><p>Votre fiche Google s'affiche directement sur l'écran d'avis. Pas d'application à installer.</p></div>
+<div class="step rv"><i>3</i><h3>Ils notent</h3><p>Quelques étoiles, un mot, c'est publié. Votre note monte, vous apparaissez plus haut.</p></div>
+</div></div></section>
+
+<section id="offre"><div class="wrap offer">
+<div class="rv"><h2>La carte avis Google, installée chez vous.</h2>
+<ul><li>Carte NFC et QR code, 10 cm, prête à poser</li><li>Liée à votre page d'avis Google</li><li>Installation et test sur place, environ 5 minutes</li><li>Aucun abonnement, aucune pile</li></ul>
+<div class="cta" style="justify-content:flex-start"><a class="btn" href="#contact">Ça m'intéresse</a></div></div>
+<div class="rv" style="text-align:center"><div class="price">50 €<small>installation incluse</small></div><p class="lead" style="margin-top:14px">Remise en main propre.</p></div>
+</div></section>
+
+<section class="band" id="gamme"><div class="wrap">
+<div class="head rv"><h2>Et pour vos autres réseaux.</h2><p class="lead">Le même principe pour Instagram, Facebook ou WhatsApp. Prix sur demande.</p></div>
+<div class="range">
+<div class="item rv"><div class="art"><div class="mini" style="background:linear-gradient(160deg,#2a6df4,#1747c9)"><svg><use href="#g"/></svg></div></div><h3>Carte Google</h3><p>50 €, installation incluse</p></div>
+<div class="item rv"><div class="art"><div class="mini" style="background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5)"><svg><use href="#ig"/></svg></div></div><h3>Carte Instagram</h3><p>Plus d'abonnés, au comptoir</p></div>
+<div class="item rv"><div class="art"><div class="mini" style="background:#1877f2"><svg><use href="#fb"/></svg></div></div><h3>Carte Facebook</h3><p>Votre page, en un geste</p></div>
+<div class="item rv"><div class="art"><div class="keys"><div class="key"><div class="mini" style="background:linear-gradient(45deg,#feda75,#d62976,#4f5bd5)"><svg><use href="#ig"/></svg></div></div><div class="key"><div class="mini" style="background:#25d366"><svg><use href="#wa"/></svg></div></div></div></div><h3>Porte-clés NFC</h3><p>Instagram, Google, WhatsApp…</p></div>
+</div></div></section>
+
+<section><div class="wrap">
+<div class="head rv"><h2>Remise en main propre autour de chez vous.</h2></div>
+<div class="zones rv"><span>Allauch</span><span>Aubagne</span><span>Plan-de-Cuques</span><span>Château-Gombert</span><span>Et alentours</span></div>
+</div></section>
+
+<section class="band" id="faq"><div class="wrap"><div class="head rv"><h2>Questions fréquentes</h2></div>
+<div class="faq">
+<details><summary>Faut-il une application ?</summary><p>Non. Les iPhone récents (à partir du XS) et la plupart des Android lisent la carte directement. Les autres scannent le QR code.</p></details>
+<details><summary>Qu'est-ce que je dois fournir ?</summary><p>Uniquement le nom de votre établissement. Je retrouve votre page d'avis Google et je programme la carte pour vous.</p></details>
+<details><summary>Y a-t-il un abonnement ?</summary><p>Non. 50 € une fois, installation comprise.</p></details>
+<details><summary>Les avis sont-ils garantis positifs ?</summary><p>Non, et c'est voulu : les avis restent libres, ce qui les rend crédibles. La carte facilite simplement le geste pour les clients satisfaits.</p></details>
+<details><summary>Et si ma commune n'est pas dans la liste ?</summary><p>Écrivez-moi, je regarde ce qui est possible.</p></details>
+</div></div></section>
+
+<section id="contact"><div class="wrap">
+<div class="head rv"><h2>Ça vous intéresse ?</h2><p class="lead">Laissez vos coordonnées. Je vous réponds rapidement.</p></div>
+<form id="f" class="rv" novalidate>
+<input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+<div class="row"><label>Nom<input name="nom" required autocomplete="name"></label><label>Établissement<input name="etablissement" required autocomplete="organization"></label></div>
+<div class="row"><label>Téléphone<input name="telephone" type="tel" required autocomplete="tel"></label><label>Email <span>(facultatif)</span><input name="email" type="email" autocomplete="email"></label></div>
+<label>Commune<select name="commune" required><option value="">Choisir</option><option>Allauch</option><option>Aubagne</option><option>Plan-de-Cuques</option><option>Château-Gombert</option><option>Autre</option></select></label>
+<fieldset><legend>Ce qui m'intéresse</legend><div class="pills">
+<label><input type="checkbox" name="produit" value="Carte avis Google" checked><b>Carte avis Google</b></label>
+<label><input type="checkbox" name="produit" value="Carte Instagram"><b>Carte Instagram</b></label>
+<label><input type="checkbox" name="produit" value="Carte Facebook"><b>Carte Facebook</b></label>
+<label><input type="checkbox" name="produit" value="Porte-clés NFC"><b>Porte-clés NFC</b></label></div></fieldset>
+<label>Message <span>(facultatif)</span><textarea name="message"></textarea></label>
+<div class="msg" id="err" role="alert"></div>
+<button class="btn" type="submit" id="go">Envoyer ma demande</button>
+<p class="note">Vos informations servent uniquement à vous recontacter au sujet de cette demande. Elles ne sont ni revendues ni partagées.</p>
+<div class="done" id="done" role="status"><div class="ok"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.500l4.500 4.500L19 7"/></svg></div><h3>Demande bien reçue.</h3><p>Je vous recontacte très vite.</p><a class="btn" href="tel:+33649862794">Appeler maintenant</a></div>
+</form>
+<p class="contact">Vous préférez m'écrire ? <a href="sms:+33649862794">06 49 86 27 94</a> · <a href="mailto:maximej836@gmail.com">maximej836@gmail.com</a></p>
+</div></section>
+</main>
+
+<footer><div class="wrap">© 2026 TapAvis. Google, Instagram, Facebook et WhatsApp sont des marques de leurs propriétaires respectifs. Ce service n'est affilié à aucune de ces sociétés.<br>
+<!-- À compléter si vous vendez régulièrement : nom, statut, SIRET -->
+Contact : maximej836@gmail.com · 06 49 86 27 94</div></footer>
+
+<script>
+// Pseudo QR code décoratif
+(function(){var s=document.getElementById('qr'),n=21,h='',seed=7;
+function r(){seed=(seed*9301+49297)%233280;return seed/233280}
+function f(x,y){h+='<rect x="'+x+'" y="'+y+'" width="7" height="7" fill="#111"/><rect x="'+(x+1)+'" y="'+(y+1)+'" width="5" height="5" fill="#fff"/><rect x="'+(x+2)+'" y="'+(y+2)+'" width="3" height="3" fill="#111"/>'}
+for(var y=0;y<n;y++)for(var x=0;x<n;x++){var inF=(x<8&&y<8)||(x>12&&y<8)||(x<8&&y>12);if(!inF&&r()>.5)h+='<rect x="'+x+'" y="'+y+'" width="1" height="1" fill="#111"/>'}
+f(0,0);f(14,0);f(0,14);s.innerHTML='<rect width="21" height="21" fill="#fff"/>'+h})();
+
+// Inclinaison de la carte
+(function(){var st=document.getElementById('stage'),c=document.getElementById('card');
+if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+st.addEventListener('pointermove',function(e){var b=st.getBoundingClientRect(),x=(e.clientX-b.left)/b.width-.5,y=(e.clientY-b.top)/b.height-.5;c.style.setProperty('--ry',(x*22)+'deg');c.style.setProperty('--rx',(-y*16)+'deg')});
+st.addEventListener('pointerleave',function(){c.style.removeProperty('--ry');c.style.removeProperty('--rx')})})();
+
+// Apparition au défilement
+(function(){var els=document.querySelectorAll('.rv');
+if(!('IntersectionObserver'in window)){els.forEach(function(e){e.classList.add('in')});return}
+var io=new IntersectionObserver(function(a){a.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+els.forEach(function(e){io.observe(e)})})();
+
+// Formulaire -> email via FormSubmit (https://formsubmit.co)
+(function(){var EMAIL='maximej836@gmail.com',f=document.getElementById('f'),err=document.getElementById('err'),go=document.getElementById('go');
+f.addEventListener('submit',function(ev){ev.preventDefault();err.className='msg';
+var d=new FormData(f);
+if(d.get('_honey'))return;
+var nom=(d.get('nom')||'').trim(),tel=(d.get('telephone')||'').trim(),etab=(d.get('etablissement')||'').trim(),com=d.get('commune');
+if(!nom||!etab||!com||tel.replace(/\D/g,'').length<9){err.textContent='Renseignez votre nom, votre établissement, votre commune et un numéro de téléphone valide.';err.className='msg err';return}
+var produits=d.getAll('produit');
+if(!produits.length){err.textContent='Choisissez au moins un produit.';err.className='msg err';return}
+var body={_subject:'Nouvelle demande carte avis : '+etab+' ('+com+')',_template:'table',_captcha:'false',
+Nom:nom,Etablissement:etab,Telephone:tel,Email:d.get('email')||'-',Commune:com,Produits:produits.join(', '),Message:d.get('message')||'-'};
+if(d.get('email'))body._replyto=d.get('email');
+go.disabled=true;go.textContent='Envoi…';
+fetch('https://formsubmit.co/ajax/'+EMAIL,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(body)})
+.then(function(r){return r.json().then(function(j){if(!r.ok||j.success==='false'||j.success===false)throw 0})})
+.then(showDone)
+.catch(function(){
+/* Repli : envoi classique (sans fetch), qui fonctionne même quand le navigateur bloque la requête */
+var h=document.createElement('form');h.method='POST';h.action='https://formsubmit.co/'+EMAIL;h.style.display='none';
+if(/^https?:/.test(location.protocol))body._next=location.origin+location.pathname+'?merci=1';
+Object.keys(body).forEach(function(k){var i=document.createElement('input');i.type='hidden';i.name=k;i.value=body[k];h.appendChild(i)});
+document.body.appendChild(h);h.submit()})});
+function showDone(){[].slice.call(f.children).forEach(function(c){if(c.id!=='done')c.style.display='none'});document.getElementById('done').style.display='block'}
+if(/[?&]merci=1/.test(location.search)){showDone();document.getElementById('contact').scrollIntoView()}})();
+</script>
+</body>
+</html>
